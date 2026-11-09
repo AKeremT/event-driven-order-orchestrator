@@ -1,3 +1,27 @@
 spring:
   application:
     name: event-driven-order-orchestrator
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/order_orchestrator_db
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate.ddl-auto: validate
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway.enabled: true
+
+  data.redis:
+    host: localhost
+    port: 6379
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: order-orchestrator-group
+      auto-offset-reset: earliest
