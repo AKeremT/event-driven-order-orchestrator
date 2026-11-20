@@ -19,10 +19,11 @@ High-concurrency e-commerce order and inventory orchestration engine built with 
 - [x] **Phase 2: Infrastructure & Database Schema (Flyway)**
   - [x] Docker Compose orchestration (`PostgreSQL 16`, `Redis 7`, `Apache Kafka KRaft`)
   - [x] Flyway physical DDL migrations (`ddl-auto=validate`), composite indexes & DB check constraints (`available_stock >= 0`)
-- [ ] **Phase 3: Domain Layer, Soft Delete & JPA Performance**
+- [x] **Phase 3: Domain Layer, Soft Delete & JPA Performance**
   - [x] Core entities with Optimistic Locking (`@Version`), JPA Auditing (`@CreatedDate`, `@LastModifiedDate`), and Soft Delete (`@SQLRestriction`)
   - [x] Zero `N+1` query guarantee using `@EntityGraph` / `JOIN FETCH`
-  - [ ] Dynamic catalog search with Spring Data JPA `Specification` API & `Pageable`
+  - [x] Dynamic catalog search with Spring Data JPA `Specification` API (`ProductSpecification`) & `Pageable`
+  - [x] Custom domain exceptions & centralized `GlobalExceptionHandler` (`@RestControllerAdvice`)
 - [ ] **Phase 4: Redis Cache-Aside & Catalog Engine**
   - [ ] Product lookup caching (`@Cacheable` / TTL) and automatic cache eviction (`@CacheEvict`) on price/stock updates
 - [ ] **Phase 5: Concurrency-Safe Inventory Reservation & Order State Machine**
